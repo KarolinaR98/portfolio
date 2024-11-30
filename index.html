@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+        rel="stylesheet">
+    <title>Karolina Ruda</title>
+</head>
+
+<body>
+    <section class="container" id="about">
+        <div class="aboutTextHolder">
+            <h1>Hi, I'm Karolina!</h1>
+            <p class="about-txt">Enthusiastic and motivated IT engineer with expertise in developing efficient and
+                scalable
+                web applications. Strong skills in technologies such as HTML, CSS, JavaScript, TypeScript and ReactJS.
+            </p>
+            <div class="iconsHolder">
+                <a href="mailto:karolina1998@vip.onet.pl"><i class="icon fa-solid fa-envelope"></i></a>
+                <a href="https://github.com/KarolinaR98" target="_blank"><i class="icon fa-brands fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/karolina-ruda-1b40742b8/" target="_blank"><i
+                        class="icon fa-brands fa-linkedin"></i></a>
+                <a href="https://www.frontendmentor.io/profile/KarolinaR98" target="_blank"><img class="iconImg"
+                        src="assets/frontend-mentor-icon.jpeg" alt="Frontend Mentor"></a>
+                <a href="files/Resume.pdf" download="Karolina Ruda Front-end Developer Resume" class="btn">Resume</a>
+            </div>
+        </div>
+        <img class="profilePicture" src="assets/profile-picture.jpg" alt="Karolina Ruda">
+    </section>
+
+    <section class="container" id="projects">
+        <div>
+            <h2>Projects</h2>
+        <div class="projectsHolder">
+            <div class="project">
+                <img src="assets/online-shop.png" alt="Online Shop" class="projectImg">
+                <div class="overlay">
+                    <div class="projectDescription">Hello World</div>
+                </div>
+            </div>
+            <div class="project">
+                <img src="assets/countries-app.png" alt="Countries App" class="projectImg">
+                <div class="overlay">
+                    <div class="projectDescription">Hello World</div>
+                </div>
+            </div>
+            <div class="project">
+                <img src="assets/user-menager.png" alt="User management table" class="projectImg">
+                <div class="overlay">
+                    <div class="projectDescription">Hello World</div>
+                </div>
+            </div>
+            <div class="project">
+                <img src="assets/spa_project.png" alt="SPA Landing Page" class="projectImg">
+                <div class="overlay">
+                    <div class="projectDescription">Hello World</div>
+                </div>
+            </div>
+            <div class="project">
+                <img src="assets/age-calculator.png" alt="Age Calculator" class="projectImg">
+                <div class="overlay">
+                    <div class="projectDescription">Hello World</div>
+                </div>
+            </div>
+            <div class="project">
+                <img src="assets/tip-calculator.png" alt="Tip Calculator" class="projectImg">
+                <div class="overlay">
+                    <div class="projectDescription">Hello World</div>
+                </div>
+            </div>
+        </div>
+        </div>
+        
+    </section>
+    <script src="https://kit.fontawesome.com/9f5ca94336.js" crossorigin="anonymous"></script>
+
+    <script>
+        const projectsHolder = document.querySelector('.projectsHolder');
+        let isDown;
+        let startX;
+        let scrollLeft;
+
+        projectsHolder.addEventListener('mousedown', (e) => {
+            isDown = true;
+            startX = e.pageX - projectsHolder.offsetLeft;
+            scrollLeft = projectsHolder.scrollLeft;
+        });
+
+        projectsHolder.addEventListener('mouseleave', () => {
+            isDown = false;
+        });
+
+        projectsHolder.addEventListener('mouseup', () => {
+            isDown = false;
+        });
+
+        projectsHolder.addEventListener('mousemove', (e) => {
+            if(!isDown) return;
+            e.preventDefault();
+            const x = e.pageX - projectsHolder.offsetLeft;
+            const walk = (x - startX) * 3;
+            projectsHolder.scrollLeft = scrollLeft - walk;
+        });
+    </script>
+</body>
+
+</html>

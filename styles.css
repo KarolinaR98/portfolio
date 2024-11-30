@@ -1,0 +1,186 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Ubuntu', sans-serif;
+    background-color: #000000;
+    color: #fff;
+}
+
+h1 {
+    font-size: 60px;
+    letter-spacing: 2px;
+}
+
+h2 {
+    font-size: 30px;
+    margin-bottom: 41.5px;
+}
+
+.container {
+    width: 75%;
+    max-width: 800px;
+    margin: auto;
+    margin-bottom: 50px;
+}
+
+/* About section*/
+
+#about {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.about-txt {
+    width: 500px;
+    font-size: 20px;
+    line-height: 25px;
+    border-bottom-left-radius: 30%;
+    border-bottom-right-radius: 30%;
+}
+
+.iconsHolder {
+    display: flex;
+    align-items: center;
+}
+
+.icon,
+.iconImg {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.icon {
+    font-size: 25px;
+    color: #fff;
+}
+
+.iconImg {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+}
+
+.btn {
+    color: white;
+    text-decoration: none;   
+    background-color: none;
+    border: 2px solid white;
+    border-radius: 10px;
+    padding: 5px 10px;  
+    margin-left: 10px;   
+}
+
+.profilePicture {
+    display: inline-block;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 2px solid white;
+    object-fit: cover;
+}
+
+/* Projects section*/
+
+.projectsHolder {
+    display: flex;
+    gap: 1em;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    overflow: hidden;
+    padding: 20px 0;
+}
+
+.project {
+    user-select: none;
+    flex-shrink: 0;
+    scroll-snap-align: start;
+    position: relative;
+    width: 500px;
+    height: 225px;
+  }
+
+.projectImg {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+  }
+  
+  .overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: white;
+    border-radius: 10px;
+  }
+  
+  .project:hover .overlay {
+    opacity: 1;
+  }
+  
+  .projectDescription {
+    color: #000000;
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+  }
+
+  @media (max-width: 756px) {
+
+    h1{
+        font-size: 30px;
+    }
+
+    .container {
+        width: 90%;
+        margin: 50px auto;
+    }
+
+    /* About section*/
+
+    #about {
+        text-align: center;
+        flex-direction: column;
+    }
+
+    .aboutTextHolder {
+        order: 2;
+    }
+
+    .about-txt {
+        width: 400px;
+        font-size: 16px;
+    }
+
+    .iconsHolder {
+        justify-content: center;
+    }
+
+    .profilePicture {
+        order: 1;
+        width: 100px;
+        height: 100px;
+    }
+
+    /* Projects section*/
+
+    .project {
+        width: 90%;
+        height: auto;
+    }
+
+    
+  }
