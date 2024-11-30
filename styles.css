@@ -180,7 +180,12 @@ h2 {
     .project {
         width: 90%;
         height: auto;
-    }
-
-    
+    }    
   }
+
+  @media (max-width: 400px) {
+    .about-txt {
+        width: 95%;
+    }
+  }
+ 

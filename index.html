@@ -37,46 +37,46 @@
     <section class="container" id="projects">
         <div>
             <h2>Projects</h2>
-        <div class="projectsHolder">
-            <div class="project">
-                <img src="assets/online-shop.png" alt="Online Shop" class="projectImg">
-                <div class="overlay">
-                    <div class="projectDescription">Hello World</div>
+            <div class="projectsHolder">
+                <div class="project">
+                    <img src="assets/online-shop.png" alt="Online Shop" class="projectImg">
+                    <div class="overlay">
+                        <div class="projectDescription">Hello World</div>
+                    </div>
                 </div>
-            </div>
-            <div class="project">
-                <img src="assets/countries-app.png" alt="Countries App" class="projectImg">
-                <div class="overlay">
-                    <div class="projectDescription">Hello World</div>
+                <div class="project">
+                    <img src="assets/countries-app.png" alt="Countries App" class="projectImg">
+                    <div class="overlay">
+                        <div class="projectDescription">Hello World</div>
+                    </div>
                 </div>
-            </div>
-            <div class="project">
-                <img src="assets/user-menager.png" alt="User management table" class="projectImg">
-                <div class="overlay">
-                    <div class="projectDescription">Hello World</div>
+                <div class="project">
+                    <img src="assets/user-menager.png" alt="User management table" class="projectImg">
+                    <div class="overlay">
+                        <div class="projectDescription">Hello World</div>
+                    </div>
                 </div>
-            </div>
-            <div class="project">
-                <img src="assets/spa_project.png" alt="SPA Landing Page" class="projectImg">
-                <div class="overlay">
-                    <div class="projectDescription">Hello World</div>
+                <div class="project">
+                    <img src="assets/spa_project.png" alt="SPA Landing Page" class="projectImg">
+                    <div class="overlay">
+                        <div class="projectDescription">Hello World</div>
+                    </div>
                 </div>
-            </div>
-            <div class="project">
-                <img src="assets/age-calculator.png" alt="Age Calculator" class="projectImg">
-                <div class="overlay">
-                    <div class="projectDescription">Hello World</div>
+                <div class="project">
+                    <img src="assets/age-calculator.png" alt="Age Calculator" class="projectImg">
+                    <div class="overlay">
+                        <div class="projectDescription">Hello World</div>
+                    </div>
                 </div>
-            </div>
-            <div class="project">
-                <img src="assets/tip-calculator.png" alt="Tip Calculator" class="projectImg">
-                <div class="overlay">
-                    <div class="projectDescription">Hello World</div>
+                <div class="project">
+                    <img src="assets/tip-calculator.png" alt="Tip Calculator" class="projectImg">
+                    <div class="overlay">
+                        <div class="projectDescription">Hello World</div>
+                    </div>
                 </div>
             </div>
         </div>
-        </div>
-        
+
     </section>
     <script src="https://kit.fontawesome.com/9f5ca94336.js" crossorigin="anonymous"></script>
 
@@ -86,27 +86,35 @@
         let startX;
         let scrollLeft;
 
-        projectsHolder.addEventListener('mousedown', (e) => {
+        const onDown = (e) => {
             isDown = true;
             startX = e.pageX - projectsHolder.offsetLeft;
             scrollLeft = projectsHolder.scrollLeft;
-        });
+        }
 
-        projectsHolder.addEventListener('mouseleave', () => {
+        const onLeaveAndUp = () => {
             isDown = false;
-        });
+        }
 
-        projectsHolder.addEventListener('mouseup', () => {
-            isDown = false;
-        });
-
-        projectsHolder.addEventListener('mousemove', (e) => {
-            if(!isDown) return;
+        const onMove = (e) => {
+            if (!isDown) return;
             e.preventDefault();
             const x = e.pageX - projectsHolder.offsetLeft;
             const walk = (x - startX) * 3;
             projectsHolder.scrollLeft = scrollLeft - walk;
-        });
+        }
+
+        const addMultipleEventListeners = (element, events, handler) => {
+            events.forEach(e => {
+                element.addEventListener(e, handler)
+            });
+        }
+
+        addMultipleEventListeners(projectsHolder, ['mousedown', 'touchdown'], (e) => onDown(e));
+
+        addMultipleEventListeners(projectsHolder, ['mouseleave', 'touchleave', 'mouseup', 'touchup'], onLeaveAndUp);
+
+        addMultipleEventListeners(projectsHolder, ['mousemove', 'touchmove'], (e) => onMove(e));
     </script>
 </body>
 
