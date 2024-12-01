@@ -104,17 +104,10 @@
             projectsHolder.scrollLeft = scrollLeft - walk;
         }
 
-        const addMultipleEventListeners = (element, events, handler) => {
-            events.forEach(e => {
-                element.addEventListener(e, handler)
-            });
-        }
-
-        addMultipleEventListeners(projectsHolder, ['mousedown', 'touchdown'], (e) => onDown(e));
-
-        addMultipleEventListeners(projectsHolder, ['mouseleave', 'touchleave', 'mouseup', 'touchup'], onLeaveAndUp);
-
-        addMultipleEventListeners(projectsHolder, ['mousemove', 'touchmove'], (e) => onMove(e));
+        projectsHolder.addEventListener('mousedown', (e) => onDown(e));
+        projectsHolder.addEventListener('mouseup', onLeaveAndUp);
+        projectsHolder.addEventListener('mouseleave', onLeaveAndUp);
+        projectsHolder.addEventListener('mousemove', (e) => onMove(e));
     </script>
 </body>
 
