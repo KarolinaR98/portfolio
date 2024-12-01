@@ -85,6 +85,8 @@ h2 {
 /* Projects section*/
 
 .projectsHolder {
+    user-select: none;
+    touch-action: none;
     overflow: auto;
     white-space: nowrap;
     scroll-snap-type: x mandatory;
