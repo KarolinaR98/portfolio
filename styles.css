@@ -184,6 +184,7 @@ h2 {
         text-align: center;
         flex-direction: column;
         justify-content: center;
+        height: 100vh;
     }
 
     .aboutTextHolder {
