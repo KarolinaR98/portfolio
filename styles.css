@@ -89,7 +89,6 @@ h2 {
     touch-action: none;
     overflow-x: scroll;
     white-space: nowrap;
-    width: 100%;
     padding: 20px 0;
 
     -ms-overflow-style: none;
@@ -184,6 +183,7 @@ h2 {
 
     .project {
         width: 90%;
+        min-width: 350px;
         height: auto;
     }    
   }
