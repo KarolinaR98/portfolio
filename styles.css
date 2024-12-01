@@ -87,7 +87,7 @@ h2 {
 .projectsHolder {
     overflow: auto;
     white-space: nowrap;
-
+    scroll-snap-type: x mandatory;
 
    /*-ms-overflow-style: none;
     scrollbar-width: none;*/
