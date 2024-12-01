@@ -88,6 +88,7 @@ h2 {
     user-select: none;
     touch-action: none;
     overflow-x: scroll;
+    overflow-y: hidden;
     white-space: nowrap;
     scroll-snap-type: x mandatory;
     scroll-padding: 0 24px;
