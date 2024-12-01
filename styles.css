@@ -85,25 +85,20 @@ h2 {
 /* Projects section*/
 
 .projectsHolder {
-    user-select: none;
-    touch-action: none;
-    overflow-x: scroll;
-    overflow-y: hidden;
+    overflow: auto;
     white-space: nowrap;
-    scroll-snap-type: x mandatory;
-    scroll-padding: 0 24px;
 
-   -ms-overflow-style: none;
-    scrollbar-width: none;
+
+   /*-ms-overflow-style: none;
+    scrollbar-width: none;*/
 }
 
-.projectsHolder::-webkit-scrollbar {
+/*.projectsHolder::-webkit-scrollbar {
     display: none;
-}
+}*/
 
 .project {
     display: inline-block;
-    scroll-snap-align: start;
     position: relative;
     margin-right: 10px;
     width: 500px;
