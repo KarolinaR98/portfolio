@@ -143,19 +143,26 @@ h2 {
 .projectDescription {
     width: 100%;
     height: 60px;
-    word-break: break-all;
+    word-break: break-word;
     white-space: normal;
     font-size: 16px;
 }
 
+.btnHolder {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
 .projectBtn {
+    display: inline-block;
     width: 150px;
     background-color: #ffffff;
     font-family: 'Ubuntu', sans-serif;
     border: 2px solid #000000;
     border-radius: 10px;
     padding: 5px 10px;
-    margin-left: 10px;
     cursor: pointer;
 }
 
@@ -201,8 +208,20 @@ h2 {
 
     .project {
         width: 90%;
-        min-width: 350px;
-        height: auto;
+        min-width: 300px;
+        height: fit-content;
+    }
+
+    .projectImg {
+        border-bottom-left-radius: 0px;
+        border-bottom-right-radius: 0px;
+    }
+
+    .overlay {
+        position: static;
+        opacity: 1;
+        border-top-left-radius: 0px;
+        border-top-right-radius: 0px;
     }
 }
 
