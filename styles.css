@@ -65,12 +65,12 @@ h2 {
 
 .btn {
     color: white;
-    text-decoration: none;   
+    text-decoration: none;
     background-color: none;
     border: 2px solid white;
     border-radius: 10px;
-    padding: 5px 10px;  
-    margin-left: 10px;   
+    padding: 5px 10px;
+    margin-left: 10px;
 }
 
 .profilePicture {
@@ -86,12 +86,14 @@ h2 {
 
 .projectsHolder {
     user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
     touch-action: none;
     overflow: auto;
     white-space: nowrap;
     scroll-snap-type: x mandatory;
 
-   /*-ms-overflow-style: none;
+    /*-ms-overflow-style: none;
     scrollbar-width: none;*/
 }
 
@@ -105,16 +107,16 @@ h2 {
     margin-right: 10px;
     width: 500px;
     height: 225px;
-  }
+}
 
 .projectImg {
     display: block;
     width: 100%;
     height: 100%;
     border-radius: 10px;
-  }
-  
-  .overlay {
+}
+
+.overlay {
     position: absolute;
     top: 0;
     bottom: 0;
@@ -126,13 +128,13 @@ h2 {
     transition: .5s ease;
     background-color: white;
     border-radius: 10px;
-  }
-  
-  .project:hover .overlay {
+}
+
+.project:hover .overlay {
     opacity: 1;
-  }
-  
-  .projectDescription {
+}
+
+.projectDescription {
     color: #000000;
     font-size: 20px;
     position: absolute;
@@ -140,16 +142,16 @@ h2 {
     left: 50%;
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
-  }
+}
 
-  @media (max-width: 756px) {
+@media (max-width: 756px) {
 
-    h1{
+    h1 {
         font-size: 30px;
     }
 
     .container {
-        width: 100%;
+        width: 90%;
         margin: 50px auto;
     }
 
@@ -185,12 +187,11 @@ h2 {
         width: 90%;
         min-width: 350px;
         height: auto;
-    }    
-  }
+    }
+}
 
-  @media (max-width: 400px) {
+@media (max-width: 400px) {
     .about-txt {
         width: 95%;
     }
-  }
- 
+}
