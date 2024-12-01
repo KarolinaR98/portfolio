@@ -87,8 +87,9 @@ h2 {
 .projectsHolder {
     user-select: none;
     touch-action: none;
-    overflow-x: scroll;
-    white-space: nowrap;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
     scroll-snap-type: x mandatory;
     scroll-padding: 0 24px;
 
@@ -100,8 +101,12 @@ h2 {
     display: none;
 }
 
+.projectsHolder {
+    -webkit-overflow-scrolling: touch;
+  }
+
 .project {
-    display: inline-block;
+    flex: 0 0 auto;
     scroll-snap-align: start;
     position: relative;
     margin-right: 10px;
