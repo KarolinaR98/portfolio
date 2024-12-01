@@ -89,13 +89,13 @@ h2 {
     white-space: nowrap;
     scroll-snap-type: x mandatory;
 
-    /*-ms-overflow-style: none;
-    scrollbar-width: none;*/
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
 
-/*.projectsHolder::-webkit-scrollbar {
+.projectsHolder::-webkit-scrollbar {
     display: none;
-}*/
+}
 
 .project {
     display: inline-block;
