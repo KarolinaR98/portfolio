@@ -87,9 +87,9 @@ h2 {
 .projectsHolder {
     user-select: none;
     touch-action: none;
-    overflow-x: auto;
-    scroll-behavior: smooth;
+    overflow-x: scroll;
     white-space: nowrap;
+    width: 100%;
     padding: 20px 0;
 
     -ms-overflow-style: none;
