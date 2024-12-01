@@ -91,13 +91,14 @@ h2 {
     white-space: nowrap;
     padding: 20px 0;
 
-    -ms-overflow-style: none;
-    scrollbar-width: none;
+   /* -ms-overflow-style: none;
+    scrollbar-width: none;*/
 }
 
+/*
 .projectsHolder::-webkit-scrollbar {
     display: none;
-}
+}*/
 
 .project {
     display: inline-block;
