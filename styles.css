@@ -85,11 +85,13 @@ h2 {
 /* Projects section*/
 
 .projectsHolder {
-    overflow: auto;
+    user-select: none;
+    overflow-x: scroll;
+    overflow-y: hidden;
     white-space: nowrap;
     scroll-snap-type: x mandatory;
 
-    -ms-overflow-style: none;
+   -ms-overflow-style: none;
     scrollbar-width: none;
 }
 
@@ -101,8 +103,8 @@ h2 {
     display: inline-block;
     position: relative;
     margin-right: 10px;
-    width: 500px;
-    height: 225px;
+    width: 600px;
+    height: 270px;
 }
 
 
@@ -165,7 +167,6 @@ h2 {
     padding: 5px 10px;
     cursor: pointer;
 }
-
 
 @media (max-width: 756px) {
 
