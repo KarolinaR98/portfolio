@@ -89,10 +89,37 @@ h2 {
     overflow-x: scroll;
     overflow-y: hidden;
     white-space: nowrap;
+    scroll-behavior: smooth;
     scroll-snap-type: x mandatory;
 
    -ms-overflow-style: none;
     scrollbar-width: none;
+}
+
+.controlsWrapper {
+    position: relative;
+}
+
+.hide {
+    opacity: 0;
+}
+
+.prev, .next {
+    user-select: none;
+    display: inline-block;
+    position: absolute;
+    text-align: center;
+    line-height: 50px;
+    z-index: 50;
+    background-color: rgba(0,0,0, 0.5);
+    top: calc(50% - 25px);
+    width: 40px;
+    height: 50px;
+    cursor: pointer;
+}
+
+.next {
+    right: 0;
 }
 
 .projectsHolder::-webkit-scrollbar {
@@ -225,6 +252,10 @@ h2 {
         opacity: 1;
         border-top-left-radius: 0px;
         border-top-right-radius: 0px;
+    }
+
+    .btnHolder{
+        margin-bottom: 25px;
     }
 }
 

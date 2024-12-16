@@ -35,8 +35,10 @@
     </section>
 
     <section class="container" id="projects">
-        <div>
-            <h2>Projects</h2>
+        <h2>Projects</h2>
+        <div class="controlsWrapper">
+            <a class="prev">&#10094;</a>
+            <a class="next">&#10095;</a>
             <div class="projectsHolder">
                 <div class="project">
                     <img src="assets/online-shop.png" alt="Online Shop" class="projectImg">
@@ -114,10 +116,11 @@
         </div>
     </section>
     <script src="https://kit.fontawesome.com/9f5ca94336.js" crossorigin="anonymous"></script>
-    
+
     <script>
-        
         const projectsHolder = document.querySelector('.projectsHolder');
+
+        //draggable slider        
         let isDown;
         let startX;
         let scrollLeft;
@@ -144,6 +147,48 @@
         projectsHolder.addEventListener('mouseup', onLeaveAndUp);
         projectsHolder.addEventListener('mouseleave', onLeaveAndUp);
         projectsHolder.addEventListener('mousemove', (e) => onMove(e));
+
+        //moving by buttons
+        const leftButton = document.querySelector(".prev");
+        const rightButton = document.querySelector(".next");
+        const project = document.querySelector(".project");
+
+        let scrollLeftMax = projectsHolder.scrollWidth - projectsHolder.clientWidth;
+        let projectWidth = project.offsetWidth;
+
+        const checkControlls = () => {
+            projectsHolder.scrollLeft === 0 ? leftButton.classList.add("hide") : leftButton.classList.remove("hide");
+
+            projectsHolder.scrollLeft === scrollLeftMax ? rightButton.classList.add("hide") : rightButton.classList.remove("hide");
+        }
+
+        checkControlls();
+
+        window.onresize = () => {
+            scrollLeftMax = projectsHolder.scrollWidth - projectsHolder.clientWidth;
+
+            projectWidth = project.offsetWidth;
+
+            checkControlls();
+        }
+
+        projectsHolder.addEventListener('scroll', (e) => {
+            const element = e.target;
+
+            element.scrollLeft === 0 ? leftButton.classList.add("hide") : leftButton.classList.remove("hide");
+
+            element.scrollLeft === scrollLeftMax ? rightButton.classList.add("hide") : rightButton.classList.remove("hide");
+
+        })
+
+        leftButton.onclick = () => {
+            projectsHolder.scrollLeft -= projectWidth + 5;
+        }
+
+        rightButton.onclick = () => {
+            projectsHolder.scrollLeft += projectWidth + 5;
+        }
+
     </script>
 
 </body>
