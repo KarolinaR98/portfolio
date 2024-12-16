@@ -211,16 +211,16 @@
 
             element.scrollLeft === 0 ? leftButton.classList.add("hide") : leftButton.classList.remove("hide");
 
-            element.scrollLeft === scrollLeftMax ? rightButton.classList.add("hide") : rightButton.classList.remove("hide");
+            element.scrollLeft >= scrollLeftMax ? rightButton.classList.add("hide") : rightButton.classList.remove("hide");
 
         })
 
         leftButton.onclick = () => {
-            projectsHolder.scrollLeft -= projectWidth + 5;
+            projectsHolder.scrollLeft -= projectWidth + 10;
         }
 
         rightButton.onclick = () => {
-            projectsHolder.scrollLeft += projectWidth + 5;
+            projectsHolder.scrollLeft += projectWidth + 10;
         }
 
     </script>
