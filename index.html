@@ -211,21 +211,12 @@
             checkControlls();
         }
 
-        //testing
-
-        const maxWidth = document.querySelector(".max");
-        const currentWidth = document.querySelector(".current"); ///
-
         projectsHolder.addEventListener('scroll', (e) => {
             const element = e.target;
 
             element.scrollLeft === 0 ? leftButton.classList.add("hide") : leftButton.classList.remove("hide");
 
             Math.ceil(element.scrollLeft) >= scrollLeftMax ? rightButton.classList.add("hide") : rightButton.classList.remove("hide");
-
-            maxWidth.textContent = scrollLeftMax;
-            currentWidth.textContent = `${element.scrollLeft} ${Math.ceil(element.scrollLeft)}`;
-
         })
 
         leftButton.onclick = () => {
@@ -235,11 +226,7 @@
         rightButton.onclick = () => {
             projectsHolder.scrollLeft += projectWidth + 10;
         }
-
         
-
-
-
     </script>
 
 </body>
