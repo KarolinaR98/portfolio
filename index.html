@@ -221,10 +221,10 @@
 
             element.scrollLeft === 0 ? leftButton.classList.add("hide") : leftButton.classList.remove("hide");
 
-            element.scrollLeft >= scrollLeftMax ? rightButton.classList.add("hide") : rightButton.classList.remove("hide");
+            Math.ceil(element.scrollLeft) >= scrollLeftMax ? rightButton.classList.add("hide") : rightButton.classList.remove("hide");
 
             maxWidth.textContent = scrollLeftMax;
-            currentWidth.textContent = element.scrollLeft;
+            currentWidth.textContent = `${element.scrollLeft} ${Math.ceil(element.scrollLeft)}`;
 
         })
 
