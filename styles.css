@@ -25,6 +25,27 @@ h2 {
     margin-bottom: 50px;
 }
 
+/* Preload spinner */
+
+.content {
+    opacity: 0;
+    transition: opacity 0.5s ease-in;
+}
+
+.preload {
+    height: 100%;
+    width: 100%;
+    background: #000000;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transition: opacity 2s
+}
+
+.fa-spinner {
+    font-size: 2.5rem;
+}
+
 /* About section*/
 
 #about {
@@ -82,7 +103,7 @@ h2 {
     scroll-behavior: smooth;
     scroll-snap-type: x mandatory;
 
-   -ms-overflow-style: none;
+    -ms-overflow-style: none;
     scrollbar-width: none;
 }
 
@@ -94,14 +115,15 @@ h2 {
     opacity: 0;
 }
 
-.prev, .next {
+.prev,
+.next {
     user-select: none;
     display: inline-block;
     position: absolute;
     text-align: center;
     line-height: 50px;
     z-index: 50;
-    background-color: rgba(0,0,0, 0.5);
+    background-color: rgba(0, 0, 0, 0.5);
     top: calc(50% - 25px);
     width: 40px;
     height: 50px;
@@ -165,6 +187,7 @@ h2 {
     word-break: break-word;
     white-space: normal;
     font-size: 16px;
+    line-height: 1.2;
 }
 
 .btnHolder {
